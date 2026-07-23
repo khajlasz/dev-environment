@@ -1,5 +1,30 @@
-# Homebrew Bundle manifest
+# Brewfile
 #
-# This file intentionally contains no packages during the project skeleton
-# phase. Managed packages, casks, taps, and Mac App Store applications will be
-# added once the baseline workstation profile is approved.
+# Baseline package inventory for the dev-environment project.
+# The goal is to provision a reproducible macOS workstation
+# for Infrastructure Automation and NetDevOps development.
+
+# Core
+#brew "git"
+brew "gh"
+
+# Python
+#brew "python"
+brew "uv"
+brew "pipx"
+
+# Utilities
+brew "jq"
+brew "yq"
+brew "tree"
+
+# Infrastructure Automation
+brew "terraform"
+brew "ansible"
+
+# Kubernetes
+brew "kubectl"
+brew "helm"
+
+# Cloud
+brew "awscli"

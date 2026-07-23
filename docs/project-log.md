@@ -18,3 +18,61 @@ Created the initial repository skeleton for a macOS Infrastructure Automation / 
 **Implications**
 
 Future automation must document prerequisites, idempotency behavior, validation, and recovery considerations before it changes a workstation.
+
+## 2026-07-20 – Documentation Foundation Completed
+
+### Milestone
+
+Second commit of the `dev-environment` repository.
+
+### Scope
+
+- Refined `README.md` to better describe the project's purpose and intended audience.
+- Reviewed and refined `AGENTS.md` to establish clear conventions for AI-assisted development and repository organization.
+
+### Key outcomes
+
+- Clarified the distinction between declarative configuration and imperative scripting.
+- Defined repository responsibilities and directory ownership.
+- Established project conventions for documentation, automation, and change discipline.
+- Confirmed the repository's role as an Infrastructure-as-Code project for provisioning and maintaining a macOS development workstation.
+
+### Result
+
+This milestone completes the initial documentation and project-definition phase. The repository now has a clear purpose, documented conventions, and a foundation for future implementation work.
+
+## 2026-07-23 – Milestone M1: Baseline Definition
+
+Completed the initial baseline for the development environment repository.
+
+### Completed
+
+- Finalized `README.md`.
+- Finalized `AGENTS.md`.
+- Added architectural decision records:
+  - ADR-001 – Supported Platform
+  - ADR-002 – Toolchain
+  - ADR-003 – Security Baseline
+- Created the initial `Brewfile` defining the baseline package inventory.
+- Performed an initial validation of the Brewfile on an Intel Mac running macOS Monterey.
+
+### Decisions
+
+- `dev-environment` defines the target workstation rather than reproducing an existing machine.
+- Apple Silicon running modern macOS is the reference platform.
+- Legacy Intel systems are used only for validation and migration.
+- Full environment validation will be completed on the future Apple Silicon workstation.
+
+### Notes
+
+Homebrew installation on macOS Monterey exposed Tier 3 platform limitations. Further implementation and validation will continue on the target Apple Silicon development machine.
+
+### Next milestone
+
+Focus shifts to the `infra-automation` repository.
+
+The next objective is to design the infrastructure data model, including:
+- domain model,
+- YAML representation,
+- JSON Schema,
+- validation pipeline.
