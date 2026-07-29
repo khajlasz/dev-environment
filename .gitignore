@@ -5,7 +5,12 @@
 
 # Editor and IDE state
 .idea/
-.vscode/
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
 *.swp
 *.swo
 *~

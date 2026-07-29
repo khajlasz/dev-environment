@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "redhat.vscode-yaml",
+    "hashicorp.terraform",
+    "redhat.ansible",
+    "yzhang.markdown-all-in-one",
+    "github.copilot"
+  ]
+}
