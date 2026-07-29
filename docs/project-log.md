@@ -76,3 +76,9 @@ The next objective is to design the infrastructure data model, including:
 - YAML representation,
 - JSON Schema,
 - validation pipeline.
+
+## 2026-07-29 — Portable tool verification added
+
+Added `scripts/verify.sh`, a POSIX-compatible, dependency-free verification helper. It checks command availability for Brewfile formulae and standard macOS application locations for Brewfile casks.
+
+The helper is read-only: it does not install, update, or remove software. It exits non-zero when required tools are missing and directs the user to the existing Homebrew bundle command for remediation.
