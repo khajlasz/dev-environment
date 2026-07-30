@@ -45,3 +45,9 @@ Do not add workstation-changing behavior without documenting its purpose, prereq
 ## License
 
 Released under the [MIT License](LICENSE).
+
+## Prerequisites
+
+Before using this repository for the first time, complete the one-time setup described in:
+
+- [docs/first-time-setup.md](docs/first-time-setup.md)
