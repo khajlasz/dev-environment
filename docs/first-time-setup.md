@@ -87,7 +87,28 @@ Expected:
 ```
 Verification passed: all required tools are available.
 ```
+## 7. Start the container runtime
 
----
+The repository uses **Colima** as the local container runtime.
 
-At this point the workstation is ready for development.
+Start it after the initial installation:
+
+```bash
+colima start
+```
+
+Verify Docker:
+
+```bash
+docker run hello-world
+```
+
+> **Note**
+>
+> Colima does not start automatically after a macOS reboot. Start it manually
+> with `colima start` whenever you need Docker.
+
+## Next steps
+
+Your workstation is now ready for infrastructure automation, Terraform,
+Ansible, Kubernetes and other Platform Engineering projects.

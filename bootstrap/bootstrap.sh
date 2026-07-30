@@ -27,3 +27,8 @@ brew cleanup
 
 echo
 echo "🎉 Bootstrap completed successfully."
+echo
+echo "Next steps:"
+echo "  1. Run: colima start"
+echo "  2. Verify: docker run hello-world"
+echo "  3. Verify the workstation: ./scripts/verify.sh"

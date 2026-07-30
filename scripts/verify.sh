@@ -52,6 +52,8 @@ check_command 'k9s' k9s
 check_command 'stern' stern
 check_command 'AWS CLI' aws
 check_command 'Codex' codex
+check_command "Docker" docker
+check_command "Colima" colima
 
 printf '\n%s\n' 'Checking graphical applications...'
 check_application 'Visual Studio Code' 'Visual Studio Code'
