@@ -15,6 +15,7 @@ The intended workstation profile supports reliable infrastructure and network au
 - Python tooling for infrastructure automation
 - Tooling for Infrastructure Automation and Network Automation projects
 - Repeatable validation and maintenance practices
+- AI assisted development with local model provided by ollama.
 
 The project will favor declarative configuration, idempotent operations, explicit versioning, and documentation that makes changes auditable.
 
@@ -41,6 +42,22 @@ The project will favor declarative configuration, idempotent operations, explici
 ## Working agreement
 
 Do not add workstation-changing behavior without documenting its purpose, prerequisites, idempotency expectations, rollback considerations, and validation method. See [AGENTS.md](AGENTS.md) for repository-specific guidance.
+
+## AI-assisted Development
+
+The development environment supports both cloud-based and local AI-assisted development.
+
+Current tooling:
+
+- OpenCode as the primary AI coding interface
+- Ollama for local LLM execution
+- ChatGPT for architecture, design reviews and complex reasoning
+
+See:
+
+- `docs/opencode.md`
+- `docs/local-llm.md`
+- `docs/adr/ADR-005-local-llm.md`
 
 ## License
 

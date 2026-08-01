@@ -108,6 +108,20 @@ docker run hello-world
 > Colima does not start automatically after a macOS reboot. Start it manually
 > with `colima start` whenever you need Docker.
 
+## Local AI
+
+Bootstrap installs:
+
+- Ollama
+
+Run:
+
+bootstrap/bootstrap.sh
+
+Verify:
+
+scripts/verify.sh
+
 ## Next steps
 
 Your workstation is now ready for infrastructure automation, Terraform,

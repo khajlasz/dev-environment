@@ -40,6 +40,7 @@ Avoid unrelated formatting changes. Preserve existing user modifications. Before
 - When multiple approaches exist, present the trade-offs before choosing one.
 - Ask for clarification instead of guessing project intent.
 - Prefer extending existing structure over introducing new top-level directories.
+- Prefer deterministic and reproducible solutions over interactive workflows.
 
 ## Working style
 
@@ -48,3 +49,11 @@ Avoid unrelated formatting changes. Preserve existing user modifications. Before
 - Prefer clarity over cleverness.
 - Keep documentation in sync with implementation.
 - Treat documentation as part of the codebase.
+
+## AI collaboration
+
+- The user is the software architect.
+- The agent proposes; the user decides.
+- Prefer explaining trade-offs over selecting a single solution.
+- Assume learning value is important.
+- Do not optimize readability away for brevity.

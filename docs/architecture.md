@@ -21,6 +21,7 @@ Define a maintainable, reviewable path from a clean macOS host to a consistent I
 | Desired configuration | `config/` | Store version-controlled configuration inputs. | Reserved |
 | Supporting automation | `scripts/` | Provide reusable helpers and validation. | Reserved |
 | Project documentation | `docs/` | Capture decisions, plans, and operational context. | Active |
+| AI Development Tooling | `config/opencode/` | OpenCode configuration template | Active |
 
 ## Operational model
 

@@ -25,6 +25,26 @@ echo
 echo "==> Cleaning up..."
 brew cleanup
 
+bootstrap_local_llm() {
+    local model="${OLLAMA_MODEL:-qwen3-coder:latest}"
+
+    if ! command -v ollama >/dev/null; then
+        echo "Ollama not installed."
+        return
+    fi
+
+    echo "Installing local model: ${model}"
+
+    ollama pull "${model}"
+
+    echo
+    echo "Verifying local model..."
+
+    ollama list
+}
+
+bootstrap_local_llm
+
 echo
 echo "🎉 Bootstrap completed successfully."
 echo
