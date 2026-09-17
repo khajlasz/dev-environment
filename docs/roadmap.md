@@ -2,26 +2,68 @@
 
 ## Guiding constraint
 
-Milestones prioritize repeatability and safety over speed of initial setup. Workstation-changing automation begins only after its desired state and validation criteria are documented.
+Milestones prioritize repeatability, safety and maintainability over adding
+workstation tooling without a clear requirement.
+
+The core workstation environment is operational. Future work should focus on
+validation, maintenance and improvements driven by actual development needs.
 
 ## Milestones
 
-| Milestone | Outcome | Status |
-| --- | --- | --- |
-| M0 — Foundation | Repository structure, documentation, contribution guidance, and placeholders. | Complete |
-| M1 — Baseline definition | Supported macOS versions, package inventory, tooling standards, and security assumptions agreed. | Planned |
-| M2 — Bootstrap design | Idempotent bootstrap approach, preflight checks, and recovery strategy specified. | Planned |
-| M3 — Configuration implementation | Version-controlled configuration and package baseline implemented. | Planned |
-| M4 — Validation | Automated verification, documentation review, and repeatability testing established. | Planned |
-| M5 — Maintenance | Upgrade policy, change management, and periodic health checks documented. | Planned |
+### M0 — Repository foundation
 
-## Near-term deliverables
+**Status:** Complete
 
-- Approve the target macOS support policy.
-- Define the initial Infrastructure Automation and NetDevOps toolchain.
-- Decide how machine-local or sensitive values are supplied.
-- Establish the validation contract before adding host-changing automation.
+Established the repository structure, documentation conventions and
+architectural decision process.
 
-## Definition of done for implementation milestones
+### M1 — Workstation baseline
 
-An implementation milestone is complete when its desired state is documented, its automation is safe to re-run, validation is reproducible, and known recovery steps are recorded.
+**Status:** Complete
+
+Defined the supported platform, package baseline, security assumptions and
+core development toolchain.
+
+### M2 — Bootstrap
+
+**Status:** Complete
+
+Implemented workstation bootstrap based on Homebrew and the declarative
+`Brewfile`.
+
+### M3 — Configuration
+
+**Status:** Complete
+
+Established version-controlled configuration for workstation tooling.
+
+Additional configuration should be added only when required by tools that are
+part of the workstation baseline.
+
+### M4 — Validation
+
+**Status:** Complete
+
+Implemented `scripts/verify.sh` to validate availability of the expected
+workstation tooling.
+
+### M5 — Maintenance
+
+**Status:** Ongoing
+
+Maintain the workstation definition as development requirements evolve.
+
+Changes to the toolchain should remain explicit, reviewable and reflected in
+the relevant documentation and ADRs.
+
+## Future work
+
+Potential future improvements include:
+
+- automated validation in CI where practical
+- periodic review of the workstation package baseline
+- validation of bootstrap behavior on a clean Apple Silicon macOS installation
+- additional workstation configuration when justified by real development needs
+
+Infrastructure lab provisioning and configuration remain outside the scope of
+this repository.

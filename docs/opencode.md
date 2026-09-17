@@ -2,118 +2,91 @@
 
 ## Purpose
 
-OpenCode is the primary AI coding interface used by this development environment.
+OpenCode provides an AI-assisted development interface that can work with both
+local and remote model providers.
 
-The goal is to provide a reproducible local development workflow while remaining independent of any single LLM provider.
+Within this workstation it is primarily used with Ollama for local
+AI-assisted development.
 
----
+OpenCode is one component of the hybrid AI development workflow rather than
+the primary interface for all AI-assisted engineering tasks.
 
 ## Architecture
 
-```
+```text
 Developer
     │
     ▼
 OpenCode
     │
-    ├── Local models (Ollama)
-    └── Remote providers (optional)
+    ├── Ollama
+    │     └── local models
+    │
+    └── remote providers
+          (optional)
 ```
+This allows the development workflow to remain independent of a specific model
+or provider.
 
-OpenCode is responsible for:
+## Local provider
 
-- repository analysis
-- code generation
-- refactoring
-- test generation
-- documentation assistance
+The local provider is Ollama.
 
----
-
-## Local Provider
-
-Current local provider:
-
-- Ollama
-
-Current coding model:
-
-- qwen3-coder:latest
-
-The exact model is not considered part of the architecture and may change over time.
-
----
+The default local coding model is currently:
+```text
+qwen3-coder
+```
+The exact model is not considered part of the architecture and may change over
+time.
 
 ## Configuration
 
-Global configuration:
-
+Global OpenCode configuration is stored under:
+```text
+~/.config/opencode/
 ```
-
-~/.config/opencode/opencode.jsonc
-
+Repository-managed configuration templates belong under:
+```text
+config/opencode/
 ```
-
-Available models:
-
-```
-
-opencode models
-
-```
-
-Configured providers:
-
-```
-
-opencode providers list
-
-```
-
----
+Machine-specific configuration and credentials must not be committed to the
+repository.
 
 ## Verification
 
-Verify Ollama:
-
+Verify that OpenCode is installed:
+```sh
+opencode --version
 ```
-
-ollama list
-curl http://localhost:11434/api/tags
-
-```
-
-Verify OpenCode:
-
-```
-
+Available models can be inspected with:
+```sh
 opencode models
-
 ```
-
-Expected result:
-
-- local model available
-- repository can be analysed
-- AGENTS.md is respected
-
----
-
+Ollama models can be inspected with:
+```sh
+ollama list
+```
+Core workstation tooling can be verified with:
+```sh
+./scripts/verify.sh
+```
 ## Workflow
 
-Typical workflow:
+OpenCode is primarily used when local AI-assisted development is appropriate.
 
-1. Discuss architecture with ChatGPT.
-2. Analyse and implement using OpenCode.
-3. Return to ChatGPT for design reviews and complex reasoning.
+Architecture, implementation and review may involve different tools depending
+on the task.
 
----
+See:
 
-## Future Work
+- [AI-assisted development workflow](ai-workflow.md)
+- [Local LLM](local-llm.md)
+- [ADR-007](./arch/ADR-007-hybrid-ai-assisted-dev.md)
 
-Potential future extensions:
+## Future work
 
-- MCP servers
-- GitHub integration
-- Additional local models
-- Custom OpenCode agents
+Potential extensions include:
+
+- additional local models
+- additional model providers
+- integrations justified by development workflow requirements
