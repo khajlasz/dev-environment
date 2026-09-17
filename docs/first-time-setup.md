@@ -87,40 +87,34 @@ Expected:
 ```
 Verification passed: all required tools are available.
 ```
-## 7. Start the container runtime
 
-The repository uses **Colima** as the local container runtime.
+## 7. AI-assisted development
 
-Start it after the initial installation:
+The bootstrap installs the local AI development tools declared in the
+`Brewfile`:
 
-```bash
-colima start
-```
-
-Verify Docker:
-
-```bash
-docker run hello-world
-```
-
-> **Note**
->
-> Colima does not start automatically after a macOS reboot. Start it manually
-> with `colima start` whenever you need Docker.
-
-## Local AI
-
-Bootstrap installs:
-
+- OpenCode
 - Ollama
+- Codex
 
-Run:
+The core workstation verification checks that these tools are installed:
 
-bootstrap/bootstrap.sh
+```sh
+./scripts/verify.sh
+```
+Local Ollama model installation is handled separately from the main workstation bootstrap:
+```sh
+./scripts/bootstrap-local-llm.sh
+```
+By default, the script pulls qwen3-coder. A different Ollama model can be selected with the OLLAMA_MODEL environment variable:
+```sh
+OLLAMA_MODEL=<model> ./scripts/bootstrap-local-llm.sh
+```
+See the dedicated documentation for configuration and usage:
 
-Verify:
-
-scripts/verify.sh
+- [AI workflow](ai-workflow.md)
+- [Local LLM](local-llm.md)
+- [OpenCode](opencode.md)
 
 ## Next steps
 
