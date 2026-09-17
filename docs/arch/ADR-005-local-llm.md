@@ -10,4 +10,4 @@ Reduce dependence on GPT token limits while keeping ChatGPT focused on architect
 
 Status
 
-Experimental
+Superseded by [ADR-007](ADR-007-hybrid-ai-workflow.md)
