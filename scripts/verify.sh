@@ -51,34 +51,14 @@ check_command 'Helm' helm
 check_command 'k9s' k9s
 check_command 'stern' stern
 check_command 'AWS CLI' aws
-check_command "Docker" docker
-check_command "Colima" colima
+check_command "Codex" codex
+check_command "OpenCode" opencode
+check_command "Ollama" ollama
 
 printf '\n%s\n' 'Checking graphical applications...'
 check_application 'Visual Studio Code' 'Visual Studio Code'
 check_application 'iTerm2' 'iTerm'
-
-printf '%s\n' 'Checking ollama...'
-
-verify_ollama() {
-
-    command -v ollama >/dev/null || fail
-
-    curl -fsS http://localhost:11434/api/tags >/dev/null || fail
-
-    ollama list
-}
-printf '%s\n' 'Checking OpenCode ...'
-
-verify_opencode() {
-
-    command -v opencode >/dev/null || fail
-
-    opencode models >/dev/null
-}
-
-verify_ollama
-verify_opencode
+check_application "UTM" "UTM"
 
 printf '\n'
 if [ "$missing" -eq 0 ]; then
