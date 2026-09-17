@@ -32,4 +32,4 @@ AI:
 
 ## Status
 
-Accepted
+Superseded by [ADR-006](ADR-006-workstation-toolchain.md)
